@@ -1,0 +1,7 @@
+syntax: glob
+
+.externals
+*.swp
+dev/target
+dev/cppformat
+dev/__*.vim
