@@ -6,5 +6,5 @@ MxxRu::Cpp::exe_target {
 
   cpp_source( "main.cpp" )
 
-  required_prj( "cppformat/prj.rb" )
+  required_prj( "cppformat_mxxru/prj.rb" )
 }
