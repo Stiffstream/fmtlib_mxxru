@@ -1,15 +1,15 @@
 # What Is It?
 
-A light mxxru wrapper for cppformat library.
+A light mxxru wrapper for fmt library.
 
 # How To Use
 
 ## Prerequisites
 
-To use *cppformat_mxxru* it is necessary to have:
+To use *fmt_mxxru* it is necessary to have:
 
 * C++11 compiler (VC++14.0, GCC 5.1 or above, clang 3.6 or above);
-* [cppformat](cppformat.github.io) 2.1.0 or above;
+* [fmt](http://fmtlib.net/latest/index.html) 3.0.0 or above;
 * [Mxx_ru](https://sourceforge.net/projects/mxxru/) 1.6.11 or above.
 
 ## Obtaining
@@ -17,33 +17,34 @@ To use *cppformat_mxxru* it is necessary to have:
 ### Cloning of Hg Repository
 
 ```
-hg clone https://bitbucket.org/sobjectizerteam/cppformat_mxxru-0.2
+hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru-0.1
 ```
 And then:
 ```
-cd cppformat_mxxru-0.2
+cd fmtlib_mxxru-0.1
 mxxruexternals
 ```
-to download and extract *cppformat_mxxru*'s dependencies.
+to download and extract *fmt_mxxru*'s dependencies.
 
 ### MxxRu::externals recipe
 
-For *cppformat_mxxru* itself:
+For *fmtlib_mxxru* itself:
 ~~~~~
 ::ruby
-MxxRu::arch_externals :cppformat_mxxru do |e|
-  e.url 'https://bitbucket.org/sobjectizerteam/cppformat_mxxru-0.2/get/v.0.2.0.tar.bz2'
+MxxRu::arch_externals :fmtlib_mxxru do |e|
+  e.url 'https://bitbucket.org/sobjectizerteam/fmtlib_mxxru-0.1/get/v.0.1.0.tar.bz2'
 
-  e.map_dir 'dev/cppformat_mxxru' => 'dev'
+  e.map_dir 'dev/fmt_mxxru' => 'dev'
 end
 ~~~~~
-For *cppformat_mxxru* dependencies:
+For *fmtlib_mxxru* dependencies:
 ~~~~~
 ::ruby
-MxxRu::arch_externals :cppformat do |e|
-  e.url 'https://github.com/cppformat/cppformat/archive/2.1.0.tar.gz'
+MxxRu::arch_externals :fmt do |e|
+  e.url 'https://github.com/fmtlib/fmt/archive/3.0.0.zip'
 
-  e.map_dir 'cppformat' => 'dev/cppformat'
+  e.map_dir 'cppformat' => 'dev/fmt'
+  e.map_dir 'fmt' => 'dev/fmt'
 end
 ~~~~~
 
@@ -51,8 +52,8 @@ end
 
 Compilation must be performed via Mxx_ru:
 ```
-hg clone https://bitbucket.org/sobjectizerteam/cppformat_mxxru-0.2
-cd cppformat_mxxru-0.2
+hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru-0.1
+cd fmtlib_mxxru-0.1
 mxxruexternals
 cd dev
 ruby build.rb
@@ -61,10 +62,9 @@ ruby build.rb
 
 # License
 
-*cppformat_mxxru* is distributed under
+*fmtlib_mxxru* is distributed under
 [BSD-3-Clause](http://spdx.org/licenses/BSD-3-Clause.html) license. See LICENSE
 file for more information.
 
-For the license of *cppformat* library see LICENSE file in *cppformat*
+For the license of *fmt* library see LICENSE file in *fmt*
 distributive.
-

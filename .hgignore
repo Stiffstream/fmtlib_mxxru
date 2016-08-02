@@ -3,6 +3,8 @@ syntax: glob
 .externals
 *.swp
 dev/target
-dev/cppformat
+dev/fmt
 dev/local-build.rb
 dev/__*.vim
+*.sublime-project
+*.sublime-workspace

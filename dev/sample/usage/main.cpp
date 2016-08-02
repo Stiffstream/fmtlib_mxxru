@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
-#include "cppformat/format.h"
+#include <fmt/format.h>
+#include <fmt/ostream.h>
+#include <fmt/time.h>
 
 class Date
 {
@@ -36,6 +38,12 @@ int main(int, char* [])
 	w << fmt::hex(42); // replaces itoa(42, buffer, 16)
 	std::cout << w.str() << std::endl;
 
-	std::string date = fmt::format("The date is {}", Date(2016, 4, 7));
+	std::string date = fmt::format("The date is {}.", Date(2016, 8, 2));
 	std::cout << date << std::endl;
+
+	std::time_t t = std::time(nullptr);
+	date = fmt::format("The local date is {:%Y-%m-%d}.", *std::localtime(&t));
+	std::cout << date << std::endl;
+
+	return 0;
 }
