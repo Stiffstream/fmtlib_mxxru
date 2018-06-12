@@ -3,6 +3,7 @@
 #include <fmt/format.h>
 #include <fmt/ostream.h>
 #include <fmt/time.h>
+#include <fmt/printf.h>
 
 class Date
 {
@@ -33,12 +34,10 @@ int main(int, char* [])
 	std::string abracadabra = fmt::format("{0}{1}{0}", "abra", "cad");
 	std::cout << abracadabra << std::endl;
 
-	fmt::MemoryWriter w;
-	w << 42; // replaces itoa(42, buffer, 10)
-	w << fmt::hex(42); // replaces itoa(42, buffer, 16)
-	std::cout << w.str() << std::endl;
+	std::string message = fmt::sprintf("The answer is %d", 42);
+	std::cout << message << std::endl;
 
-	std::string date = fmt::format("The date is {}.", Date(2016, 8, 2));
+	std::string date = fmt::format("The date is {}.", Date(2018, 6, 12));
 	std::cout << date << std::endl;
 
 	std::time_t t = std::time(nullptr);

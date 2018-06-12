@@ -5,7 +5,7 @@ require 'mxx_ru/cpp'
 
 MxxRu::Cpp::composite_target {
 
-  include_path( 'fmt', MxxRu::Cpp::Target::OPT_UPSPREAD )
+  include_path( 'fmt/include', MxxRu::Cpp::Target::OPT_UPSPREAD )
 
   define( 'FMT_HEADER_ONLY', MxxRu::Cpp::Target::OPT_UPSPREAD )
 }

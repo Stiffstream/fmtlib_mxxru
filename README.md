@@ -9,7 +9,7 @@ A light mxxru wrapper for fmt library.
 To use *fmt_mxxru* it is necessary to have:
 
 * C++11 compiler (VC++14.0, GCC 5.1 or above, clang 3.6 or above);
-* [fmt](http://fmtlib.net/latest/index.html) 3.0.0 or above;
+* [fmt](http://fmtlib.net/latest/index.html) 5.0.0 or above (see older tags for support of previous versions of fmt);
 * [Mxx_ru](https://sourceforge.net/projects/mxxru/) 1.6.11 or above.
 
 ## Obtaining
@@ -17,11 +17,11 @@ To use *fmt_mxxru* it is necessary to have:
 ### Cloning of Hg Repository
 
 ```
-hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru-0.1
+hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru
 ```
 And then:
 ```
-cd fmtlib_mxxru-0.1
+cd fmtlib_mxxru
 mxxruexternals
 ```
 to download and extract *fmt_mxxru*'s dependencies.
@@ -32,19 +32,19 @@ For *fmtlib_mxxru* itself:
 ~~~~~
 ::ruby
 MxxRu::arch_externals :fmtlib_mxxru do |e|
-  e.url 'https://bitbucket.org/sobjectizerteam/fmtlib_mxxru-0.1/get/v.0.1.0.tar.bz2'
+  e.url 'https://bitbucket.org/sobjectizerteam/fmtlib_mxxru/get/fmt-5.0.0.tar.bz2'
 
   e.map_dir 'dev/fmt_mxxru' => 'dev'
 end
 ~~~~~
+
 For *fmtlib_mxxru* dependencies:
 ~~~~~
 ::ruby
 MxxRu::arch_externals :fmt do |e|
-  e.url 'https://github.com/fmtlib/fmt/archive/3.0.0.zip'
+  e.url 'https://github.com/fmtlib/fmt/archive/5.0.0.zip'
 
-  e.map_dir 'cppformat' => 'dev/fmt'
-  e.map_dir 'fmt' => 'dev/fmt'
+  e.map_dir 'include' => 'dev/fmt'
 end
 ~~~~~
 
@@ -52,10 +52,10 @@ end
 
 Compilation must be performed via Mxx_ru:
 ```
-hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru-0.1
-cd fmtlib_mxxru-0.1
+hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru
+cd fmtlib_mxxru
 mxxruexternals
-cd dev
+cd devs
 ruby build.rb
 ```
 *NOTE.* It may be necessary to set up `MXX_RU_CPP_TOOLSET` environment variable.
