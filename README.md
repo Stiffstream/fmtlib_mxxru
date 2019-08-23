@@ -14,13 +14,13 @@ To use *fmt_mxxru* it is necessary to have:
 
 ## Obtaining
 
-### Cloning of Hg Repository
+### Cloning of Git Repository
 
-```
-hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru
+```sh
+git clone https://github.com/stiffstream/fmtlib_mxxru
 ```
 And then:
-```
+```sh
 cd fmtlib_mxxru
 mxxruexternals
 ```
@@ -29,33 +29,36 @@ to download and extract *fmt_mxxru*'s dependencies.
 ### MxxRu::externals recipe
 
 For *fmtlib_mxxru* itself:
-~~~~~
-::ruby
+```sh
 MxxRu::arch_externals :fmtlib_mxxru do |e|
-  e.url 'https://bitbucket.org/sobjectizerteam/fmtlib_mxxru/get/fmt-5.0.0.tar.bz2'
+  e.url 'https://github.com/Stiffstream/fmtlib_mxxru/archive/fmt-5.0.0-1.tar.gz'
 
   e.map_dir 'dev/fmt_mxxru' => 'dev'
 end
-~~~~~
+```
 
 For *fmtlib_mxxru* dependencies:
-~~~~~
-::ruby
+```sh
 MxxRu::arch_externals :fmt do |e|
-  e.url 'https://github.com/fmtlib/fmt/archive/5.0.0.zip'
+  e.url 'https://github.com/fmtlib/fmt/archive/5.3.0.zip'
 
   e.map_dir 'include' => 'dev/fmt'
+  e.map_dir 'src' => 'dev/fmt'
+  e.map_dir 'support' => 'dev/fmt'
+  e.map_file 'CMakeLists.txt' => 'dev/fmt/*'
+  e.map_file 'README.rst' => 'dev/fmt/*'
+  e.map_file 'ChangeLog.rst' => 'dev/fmt/*'
 end
-~~~~~
+```
 
 ## Compilation
 
 Compilation must be performed via Mxx_ru:
-```
-hg clone https://bitbucket.org/sobjectizerteam/fmtlib_mxxru
+```sh
+git clone https://github.com/stiffstream/fmtlib_mxxru
 cd fmtlib_mxxru
 mxxruexternals
-cd devs
+cd dev
 ruby build.rb
 ```
 *NOTE.* It may be necessary to set up `MXX_RU_CPP_TOOLSET` environment variable.

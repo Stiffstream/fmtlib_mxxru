@@ -1,0 +1,9 @@
+/.externals
+*.swp
+/dev/target
+/dev/fmt
+/dev/local-build.rb
+/dev/__*.vim
+*.sublime-project
+*.sublime-workspace
+
